@@ -20,20 +20,35 @@ public class carro {
         System.out.println("Preço: "+preco);
     }
     
+    void verificarArCondicionado(){
+        if(arCondicionado)
+            System.out.println("Possui ar-condicionado");
+        else
+            System.out.println("Não possui ar-condicionado");
+    }
+    
+    void alterarPreco(double precoNovo){
+        preco = precoNovo;
+    }
+    
     
     public static void main(String[] args) {
         carro c = new carro();
         c.modelo = "Honda Civic";
         c.anoFabricacao = 2020;
         c.preco = 90000;
-        c.arCondicionado = true;
+        c.arCondicionado = false;
         
         //saída
         System.out.println("Modelo: "+c.modelo);
         System.out.println("Ano: "+c.anoFabricacao);
         //System.out.println("Preço: "+c.preco);
         c.informarPreco();
-        System.out.println("Ar-condicionado: "+c.arCondicionado);
+        //System.out.println("Ar-condicionado: "+c.arCondicionado);
+        c.verificarArCondicionado();
+        
+        c.alterarPreco(100000);
+        c.informarPreco();
     }
     
 }
