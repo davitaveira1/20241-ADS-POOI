@@ -11,10 +11,26 @@ package ex02;
 public class Produto {
     
     String nome;
+    int qtdEstoque;
+    
+    void atualizarEstoque(int qtdAdicionada){
+        qtdEstoque = qtdEstoque + qtdAdicionada;
+    }
+    
+    void exibirDetalhes(){
+        System.out.println("Estoque: "+qtdEstoque);
+    }
     
     public static void main(String[] args) {
         Produto p = new Produto();
         p.nome = "Chocolate";
+        p.qtdEstoque = 5;
+        p.atualizarEstoque(20);
+        p.exibirDetalhes();
+        
+        
+        
+        
     }
     
 }
