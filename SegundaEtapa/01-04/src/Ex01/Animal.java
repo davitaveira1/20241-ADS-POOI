@@ -39,7 +39,12 @@ public class Animal {
         //chamando métodos que não retornam
         a.apresentarNome();
         a.apresentarNomeProprietario("Davi");
-       
+        //chamando métodos que retornam
+        String valorRetornoString = a.apresentarNomeRetorno();
+        int valorRetornoInt = a.calcularIdadeEquivalente(3);
+        
+        System.out.println("Nome utilizando método que retorna: "+valorRetornoString);
+        System.out.println("Idade equivalente: "+valorRetornoInt);
         
     }
            
