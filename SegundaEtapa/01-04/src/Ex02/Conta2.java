@@ -31,16 +31,34 @@ public class Conta2 {
     void debitar(double valorRetirada) {
         if (saldoSuficiente(valorRetirada)) {
             System.out.println("Débito realizado com sucesso!");
+            saldo = saldo - valorRetirada;
         } else {
             System.out.println("Não foi possível realizar o débito!");
         }
     }
+    
+    void creditar(double valorCreditado){
+        saldo = saldo + valorCreditado;
+    }    
+    
+    void transferir(Conta2 c, double valor){
+        if(saldo >= valor){
+            saldo = saldo - valor;
+            c.saldo = c.saldo + valor;
+        }else{
+            System.out.println("Saldo insuficiente!");
+        }
+    }
 
     public static void main(String[] args) {
-        Conta2 c = new Conta2();
-        c.saldo = 1000;
-        //c.debitar(999);
-        //c.debitar(1000);
-        c.debitar(1001);
+        Conta2 contaA = new Conta2();
+        Conta2 contaB = new Conta2();
+        contaA.saldo = 1000;
+        contaB.saldo = 0;
+        
+        contaA.transferir(contaB, 999);
+        System.out.println("Saldo conta A:"+contaA.saldo);
+        System.out.println("Saldo conta B:"+contaB.saldo);
+
     }
 }
