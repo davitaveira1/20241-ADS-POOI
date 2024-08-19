@@ -19,6 +19,12 @@ public class Pessoa {
         this.idade = idade;
         this.altura = altura;
     }
+    
+    public void exibirDadosPessoa(){
+        System.out.println("Nome: "+nome);
+        System.out.println("Idade: "+idade);
+        System.out.println("Altura: "+altura);
+    }
 
     public String getNome() {
         return nome;
