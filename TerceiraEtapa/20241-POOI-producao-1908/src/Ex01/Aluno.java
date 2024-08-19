@@ -12,12 +12,13 @@ public class Aluno extends Pessoa {
     
     String matricula;
 
-    public Aluno(String matricula,String nome,int idade,double altura){
-        super(nome, idade, altura);
+    public Aluno(String matricula,Pessoa p){
+        super(p.getNome(), p.getIdade(), p.getAltura());
         this.matricula = matricula;
     }
     
     public void exibirDadosAluno(){
+        super.exibirDadosPessoa();
         System.out.println("Matricula: "+matricula);
     }
     
