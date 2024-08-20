@@ -11,15 +11,23 @@ package Ex01;
 public class Aluno extends Pessoa {
     
     String matricula;
+    String responsavelFinanceiro;
 
     public Aluno(String matricula,Pessoa p){
-        super(p.getNome(), p.getIdade(), p.getAltura());
+        super(p.getNome(), p.getIdade(), p.getAltura(),p.cpf);
         this.matricula = matricula;
     }
     
     public void exibirDadosAluno(){
         super.exibirDadosPessoa();
         System.out.println("Matricula: "+matricula);
+    }
+    
+    @Override
+    public void dadosPessoais(){
+        super.dadosPessoais();
+        System.out.println("Responsável financeiro: "+responsavelFinanceiro);
+        
     }
     
     
